@@ -1,4 +1,4 @@
 DevelopingDataProducts
 ======================
 
-The course project host here
+The course project is host here
