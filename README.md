@@ -1,4 +1,4 @@
 DevelopingDataProducts
 ======================
 
-for coursera
+The course project host here
