@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Letter Cloud and Prediction</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Letter Cloud and Prediction">
+  <meta name="author" content="Z Hao">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Letter Cloud and Prediction</h1>
+    <h2>A shiny app predicts your love of letters</h2>
+    <p>Z Hao<br/>Scientist</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What do you know about your love of letters?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li>Most of us know what words are our favorite
+
+<ul>
+<li>good</li>
+<li>chocolate</li>
+<li>love</li>
+<li>owesome</li>
+</ul></li>
+<li>And we know letters form words</li>
+<li>But our favorite letters are hidden somewhere in our brain.</li>
+<li>Let&#39;s find them out with this app!</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Step 1</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Give me a list of words that you like:</p>
+
+<p>For example:</p>
+
+<pre><code class="r">favorite.words &lt;- c(&quot;Good&quot;, &quot;Luck&quot;, &quot;Owesome&quot;, &quot;Serious&quot;, &quot;Play&quot;, &quot;Fun&quot;, &quot;Fine&quot;, &quot;Chocolate&quot;)
+</code></pre>
+
+<p>Then, type them out:</p>
+
+<pre><code class="r">paste(favorite.words, collapse = &quot; &quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;Good Luck Owesome Serious Play Fun Fine Chocolate&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Step 2</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>You then give the sentence to the Letter Cloud app.<br>
+It first chops the words into letters:</p>
+
+<pre><code class="r">unlist(strsplit(toupper(favorite.words), NULL))
+</code></pre>
+
+<pre><code>##  [1] &quot;G&quot; &quot;O&quot; &quot;O&quot; &quot;D&quot; &quot;L&quot; &quot;U&quot; &quot;C&quot; &quot;K&quot; &quot;O&quot; &quot;W&quot; &quot;E&quot; &quot;S&quot; &quot;O&quot; &quot;M&quot; &quot;E&quot; &quot;S&quot; &quot;E&quot;
+## [18] &quot;R&quot; &quot;I&quot; &quot;O&quot; &quot;U&quot; &quot;S&quot; &quot;P&quot; &quot;L&quot; &quot;A&quot; &quot;Y&quot; &quot;F&quot; &quot;U&quot; &quot;N&quot; &quot;F&quot; &quot;I&quot; &quot;N&quot; &quot;E&quot; &quot;C&quot;
+## [35] &quot;H&quot; &quot;O&quot; &quot;C&quot; &quot;O&quot; &quot;L&quot; &quot;A&quot; &quot;T&quot; &quot;E&quot;
+</code></pre>
+
+<p>Then create a frequency table from the letters:</p>
+
+<pre><code>## 
+## A C D E F G H I K L M N O P R S T U W Y 
+## 2 3 1 5 2 1 1 2 1 3 1 2 7 1 1 3 1 3 1 1
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Step 3</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Finally, the letters are sorted and filtered:</p>
+
+<pre><code>## O E C L S U A F I N D G H K M P R T W Y 
+## 7 5 3 3 3 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1
+</code></pre>
+
+<p>Now we know what your favorite letters are. In this example, it is &quot;O&quot;. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>A quick map of your brain of letters - Letter Cloud</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here is a letter cloud map. Is this your brain of letters?<br>
+Visit <a href="https://prizmworkshop.shinyapps.io/WordCount/">https://prizmworkshop.shinyapps.io/WordCount/</a> for details!  </p>
+
+<pre><code>## Loading required package: RColorBrewer
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What do you know about your love of letters?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Step 1'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Step 2'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Step 3'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='A quick map of your brain of letters - Letter Cloud'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
