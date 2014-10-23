@@ -1,8 +1,8 @@
 ---
 title       : Letter Cloud and Prediction
 subtitle    : A shiny app predicts your love of letters
-author      : Z Hao
-job         : Scientist
+author      : Zhao Hao
+job         : Online Physicist
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -85,11 +85,6 @@ Now we know what your favorite letters are. In this example, it is "O".
 Here is a letter cloud map. Is this your brain of letters?  
 Visit [https://prizmworkshop.shinyapps.io/WordCount/][id] for details!  
 
-
-```
-## Loading required package: RColorBrewer
-```
-
-![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6.png) 
+![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6-1.png) 
 
 [id]: https://prizmworkshop.shinyapps.io/WordCount/ 

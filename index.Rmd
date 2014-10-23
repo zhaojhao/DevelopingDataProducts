@@ -1,8 +1,8 @@
 ---
 title       : Letter Cloud and Prediction
 subtitle    : A shiny app predicts your love of letters
-author      : Z Hao
-job         : Scientist
+author      : Zhao Hao
+job         : Online Physicist
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -72,6 +72,7 @@ Visit [https://prizmworkshop.shinyapps.io/WordCount/][id] for details!
 
 ```{r,echo=FALSE}
 library(wordcloud)
+library(RColorBrewer)
 wordcloud(names(vletters), vletters, scale=c(8,0.3), min.freq = 1, colors=brewer.pal(8, "Dark2"))   
 ```
 
