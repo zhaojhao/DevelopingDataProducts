@@ -47,7 +47,7 @@ It first chops the words into letters:
 ```{r}
 unlist(strsplit(toupper(favorite.words), NULL))
 ```
-Then create a frequency table from the letters:
+Then creates a frequency table from the letters:
 ```{r, echo=FALSE}
 ftable <- table(unlist(strsplit(toupper(favorite.words), NULL)))
 ftable

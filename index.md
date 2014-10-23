@@ -60,7 +60,7 @@ unlist(strsplit(toupper(favorite.words), NULL))
 ## [18] "R" "I" "O" "U" "S" "P" "L" "A" "Y" "F" "U" "N" "F" "I" "N" "E" "C"
 ## [35] "H" "O" "C" "O" "L" "A" "T" "E"
 ```
-Then create a frequency table from the letters:
+Then creates a frequency table from the letters:
 
 ```
 ## 
